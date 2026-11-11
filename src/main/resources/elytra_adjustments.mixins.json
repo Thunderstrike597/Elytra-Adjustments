@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.kenji.elytra_adjustments.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "elytra_adjustments.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "AccessorCamera",
+    "MixinCamera"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
