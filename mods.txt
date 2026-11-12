@@ -21,3 +21,4 @@ implementation resourceful-config-714059
 implementation common-network-806044
 implementation caelus-308989
 implementation curios-309927
+implementation configured-457570

@@ -1,23 +1,20 @@
-package net.kenji.elytra_adjustments;
+package net.kenji.elytra_adjustments.compat;
 
+import net.kenji.elytra_adjustments.ConfigClient;
+import net.kenji.elytra_adjustments.ElytraAdjustments;
 import net.kenji.elytra_adjustments.mixins.AccessorCamera;
 import net.kenji.epicfight_swordsoaringfixes.compat.SwordSoaringCompat;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
-import org.jline.utils.Log;
 import yesman.epicfight.api.client.event.EpicFightClientHooks;
 import yesman.epicfight.api.client.event.types.BuildCameraTransform;
-import yesman.epicfight.client.ClientEngine;
 import yesman.epicfight.client.world.capabilites.entitypatch.player.LocalPlayerPatch;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.entitypatch.player.PlayerPatch;
 
-public final class ElytraCameraFix {
+public final class EpicFightElytraCameraFix {
 
   // true from flight start until the camera has fully recovered
     private static double offsetNow = 0.0D;
@@ -25,7 +22,7 @@ public final class ElytraCameraFix {
 
     private static final double SPEED = 14.0D;
     public static void init() {
-        EpicFightClientHooks.Camera.BUILD_TRANSFORM_POST.registerEvent(ElytraCameraFix::onCameraPost, 10);
+        EpicFightClientHooks.Camera.BUILD_TRANSFORM_POST.registerEvent(EpicFightElytraCameraFix::onCameraPost, 8);
     }
 
     private static boolean isElytraFlying(PlayerPatch<?> patch){

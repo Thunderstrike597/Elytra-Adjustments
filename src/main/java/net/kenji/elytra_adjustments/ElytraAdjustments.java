@@ -1,6 +1,7 @@
 package net.kenji.elytra_adjustments;
 
 import com.mojang.logging.LogUtils;
+import net.kenji.elytra_adjustments.compat.EpicFightElytraCameraFix;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -13,7 +14,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLLoader;
-import org.jline.utils.Log;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -45,7 +45,7 @@ public class ElytraAdjustments {
 
     private void onLoadComplete(final FMLLoadCompleteEvent event) {
         if(EF_LOADED)
-            ElytraCameraFix.init();
+            EpicFightElytraCameraFix.init();
     }
 
     // Add the example block item to the building blocks tab
